@@ -21,7 +21,7 @@ include_once('functions.php')
 	<header id="top-header" class="site-header">
 		<div class="wrapper">
 			<div class="site-identity">
-				<a href="#" class="custom-logo-link" rel="home" title="Visit homepage"><img src="tmp/logo.png" class="custom-logo" width="131" height="36" alt="Bateria"><img src="tmp/logo.png" class="custom-logo alt-version" width="131" height="36" alt="Bateria"></a>
+				<a href="<?=$url?>" class="custom-logo-link" rel="home" title="Visit homepage"><img src="tmp/logo2.png" class="custom-logo" width="131" height="36" alt="Bateria"><img src="tmp/logo.png" class="custom-logo alt-version" width="131" height="36" alt="Bateria"></a>
 				<p class="site-description screen-reader-text"><?=$data->name?></p>
 			</div>
 			<div id="menu-toggle" class="mobile-menu-toggle">
@@ -115,7 +115,7 @@ include_once('functions.php')
 						<p  style="font-family:Al-Jazeera-Arabic-Regular; text-align:right"><?=$data->description?></p>
 					</div>
           <div class="episode-player episode-type-video shine-on-hover">
-						<video src="tmp/10.mp4"  preload="metadata" poster="tmp/image1.jpg"  autoplay  width="1280" height="720"></video>
+						<video src="tmp/10.mp4"  preload="metadata" poster="<?=$url.'tmp/image1.jpg'?>"  autoplay  width="1280" height="720"></video>
 						<a href="https://html.liviucerchez.com/bateria/tmp/sample-featured-video1.mp4" class="media-cover"><span class="media-play-pause"></span></a>
 						<div class="media-controls">
 							<button class="media-play-pause"></button>
@@ -140,7 +140,7 @@ include_once('functions.php')
 				</div>
 			</div>
 			<!-- <img src="tmp/sample-featured.jpg" alt=""> -->
-      <video src="tmp/sample-featured-video2.mp4" poster="tmp/sample-featured-video2.jpg" preload="metadata" muted="" autoplay="" loop="" width="1320" height="756"></video>
+      <video src="tmp/sample-featured-video2.mp4" poster="<?=$url.''?>" preload="metadata" muted="" autoplay="" loop="" width="1320" height="756"></video>
 		</div>
 	</header>
 

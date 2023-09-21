@@ -1,6 +1,14 @@
 <?php
 
 include_once('data.php');
+
+$host = $_SERVER['HTTP_HOST'];
+
+$path = $_SERVER['REQUEST_URI'];
+
+$url = "http://$host$path";
+
+
 //get OAuth 2.0
 function get_auth(){
 $curl = curl_init();
