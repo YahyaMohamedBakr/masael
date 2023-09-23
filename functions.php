@@ -130,3 +130,44 @@ foreach($items as $item){
     $image = $item->images[1]->url;
 
 }
+
+
+//Youtue videos
+require_once 'vendor/autoload.php';
+
+$apiKey = 'AIzaSyAu6CTW8dyClchf2DSx41Yv3U8aeZlvOQM';
+
+try{
+$client = new Google_Client();
+$client->setDeveloperKey($apiKey);
+$youtube = new Google_Service_YouTube($client);
+
+$results = $youtube->channels->listChannels('id', array(
+  'forUsername' => 'masaelorg'
+));
+
+
+//$channelId = 'UClk0TeopGpcdt2tpywA5rQw'; 
+
+
+// $results = $youtube->search->listSearch('id,snippet', array(
+//     'channelId' => $channelId,
+//     'maxResults' => 10, 
+// ));
+}catch(Google_Service_Exception $e){
+  echo 'خطأ في خدمة Google: ' . htmlspecialchars($e->getMessage());
+}catch (Google_Exception $e) {
+ 
+  echo 'خطأ Google آخر: ' . htmlspecialchars($e->getMessage());
+} catch (Exception $e) {
+
+  echo 'حدث خطأ غير متوقع: ' . htmlspecialchars($e->getMessage());
+}
+// foreach ($results['items'] as $index=>$video) {
+
+//   if($index>0){
+//     echo $video['snippet']['title']."<br>";
+//     echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/'.$video['id']['videoId'].'" frameborder="0" allowfullscreen></iframe>';
+//   }
+    
+// }

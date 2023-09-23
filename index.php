@@ -224,9 +224,15 @@ foreach($items as $item){
 				<div class="widget widget_media_gallery">
 					<h5 class="widget-title">Recent photos</h5>
 					<div class="block-gallery columns-2">
-						<figure class="block-image">
-							<a href="tmp/sample-540x540.jpg" data-fancybox="test-gallery"><img src="tmp/sample-540x540.jpg" width="540" height="540" loading="lazy" alt=""></a>
-						</figure>
+
+					
+					
+					
+					  <figure class="block-image">
+					 	 <a href="tmp/sample-540x540.jpg" data-fancybox="test-gallery"><img src="tmp/sample-540x540.jpg" width="540" height="540" loading="lazy" alt=""></a>
+
+					  </figure>
+
 						<figure class="block-image">
 							<a href="tmp/sample-540x540.jpg" data-fancybox="test-gallery"><img src="tmp/sample-540x540.jpg" width="540" height="540" loading="lazy" alt=""></a>
 						</figure>
@@ -279,17 +285,30 @@ foreach($items as $item){
 				<span class="intro-gallery-title">Find more personal moments <span class="highlight">on Instagram</span></span>
 				<em class="intro-gallery-username">@liviucerchez</em>
 			</a>
+<?php
+			foreach ($results['items'] as $index=>$video) {
+
+				if($index>0){
+?>
 			<div class="gallery-photo">
-				<a href="https://instagram.com/liviucerchez/" target="_blank">
-					<img src="tmp/sample-540x540.jpg" width="540" height="540" loading="lazy" alt="">
-					<span class="data">
+				<!-- <a href="https://instagram.com/liviucerchez/" target="_blank"> -->
+			
+
+				<iframe width="200" height="200" src="<?php echo 'https://www.youtube.com/embed/'.$video['id']['videoId']?>" frameborder="0" allowfullscreen></iframe>
+					<!-- <img src="tmp/sample-540x540.jpg" width="540" height="540" loading="lazy" alt=""> -->
+					<!-- <span class="data">
 						<span class="meta">
 							<span class="likes"><em class="mdi mdi-heart"></em> <strong class="count">3</strong></span>
 						</span>
-					</span>
+					</span> -->
 				</a>
 			</div>
-			<div class="gallery-photo">
+			<?php
+				}
+			
+			}
+		?>
+			<!-- <div class="gallery-photo">
 				<a href="https://instagram.com/liviucerchez/" target="_blank">
 					<img src="tmp/sample-540x540.jpg" width="540" height="540" loading="lazy" alt="">
 					<span class="data">
@@ -358,7 +377,7 @@ foreach($items as $item){
 						</span>
 					</span>
 				</a>
-			</div>
+			</div> -->
 			<a href="https://instagram.com/liviucerchez/" target="_blank" class="outro-gallery"><span>Don't miss daily inspiration and updates</span></a>
 		</div>
 	</footer>
